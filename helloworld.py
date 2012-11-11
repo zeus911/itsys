@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# -*- UTF-8 -*-*
-# fileName: helloworld.py
+# -*- coding:UTF-8 -*-
+# filename:helloworld.py
 
 
 if __name__ == "__main__":
