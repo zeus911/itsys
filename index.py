@@ -3,8 +3,10 @@
 # filename:index.py
 
 import web
+from tools import yyc
 
 urls = (
+    '/tools', yyc.app_yyc, 
     '/', 'index'
 )
 

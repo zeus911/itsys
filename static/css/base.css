@@ -1,0 +1,5 @@
+table {border-collapse: collapse;}
+tr    {display: table-row; vertical-align: inherit; border-color: inherit;}
+td,th {border: 1px solid #000000; font-size: 75%; vertical-align: baseline;}
+td    {background-color: #ccc;}
+th    {background-color: #ccf;}

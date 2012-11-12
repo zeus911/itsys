@@ -1,0 +1,31 @@
+$def with (yyc)
+
+<html>
+<head>
+  <title> 有效链接 </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+</head>
+<body>
+<div align="center">
+<table border="0" cellpadding="3">
+<caption>有效链接信息</caption>
+$for k in yyc: 
+	<tr>
+	<th>$k</th>
+	<td>
+	$if k == '生成地址列表':
+		$for m in yyc[k]:
+			$m&nbsp;&nbsp;<a href="$m">download</a><br/>
+	$else:
+		$:yyc[k]		
+	</td>
+	</tr>
+</table>
+</div>
+</body>
+</html>
