@@ -21,8 +21,8 @@ class rehosts:
 class index:
     def GET(self):
         r = open(hostsfile)
-        list = r.readlines()
-        print len(list)
-        for i in list:
+        hostlist = r.readlines()
+        print len(hostlist)
+        for i in hostlist:
             print i
         return 'OK'
