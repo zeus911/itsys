@@ -6,7 +6,7 @@ import web
 from tools import yyc
 
 urls = (
-    '/tools', yyc.app_yyc, 
+    '/yyc', yyc.app_yyc, 
     '/', 'index'
 )
 
