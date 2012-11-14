@@ -3,10 +3,11 @@
 # filename:index.py
 
 import web
-from tools import yyc
+from tools import yyc, hosts
 
 urls = (
-    '/yyc', yyc.app_yyc, 
+    '/yyc', yyc.app_yyc,
+    '/hosts', hosts.app_hosts,
     '/', 'index'
 )
 
