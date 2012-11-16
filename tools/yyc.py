@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding:UTF-8 -*-
-# filename:blog.py
+# filename:yyc.py
 
 import web, re, datetime, time, hashlib, urllib
 from urlparse import urlparse

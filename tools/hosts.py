@@ -33,7 +33,7 @@ class index:
             if isMatch: 
                 hosts += host
         responseHtml += '<textarea name="hosts" cols="60" rows="15">' + hosts + '</textarea><br/>'
-        responseHtml += '<input type="submit" value="更新"></form>'
+        responseHtml += '<input type="submit" value="Update"></form>'
         return responseHtml
     
 class mod:
@@ -54,5 +54,5 @@ class mod:
             if isMatch: 
                 hosts += host
         responseHtml += '<textarea name="hosts" cols="60" rows="15">' + hosts + '</textarea><br/>'
-        responseHtml += '<input type="submit" value="更新"></form>'
+        responseHtml += '<input type="submit" value="Update"></form>'
         return responseHtml
