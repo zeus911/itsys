@@ -20,7 +20,7 @@ $for k in yyc:
 	<td>
 	$if k == '生成地址列表':
 		$for m in yyc[k]:
-			$m&nbsp;&nbsp;<a href="$m">download</a><br/>
+			$:m
 	$else:
 		$:yyc[k]		
 	</td>
