@@ -4,7 +4,6 @@
 
 import web, re, datetime, time, hashlib, urllib, random
 from urlparse import urlparse
-from django.utils.crypto import random
 
 urls = (
     '/index', 'index',
