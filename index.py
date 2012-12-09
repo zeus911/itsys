@@ -3,11 +3,12 @@
 # filename:index.py
 
 import web
-from tools import yyc, hosts
+from tools import yyc, hosts, nagios
 
 urls = (
     '/yyc', yyc.app_yyc,
     '/hosts', hosts.app_hosts,
+    '/nagios', nagios.app_nagios,
     '/', 'index'
 )
 

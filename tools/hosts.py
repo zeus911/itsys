@@ -18,7 +18,7 @@ hostsFile = '/etc/hosts'
 
 class rehosts:
     def GET(self, path):
-        return 'Welcome to here, URI is /blog{0}, path is {0}'.format(path)
+        return 'Welcome to here, URI is /hosts{0}'.format(path)
 
 class index:
     def GET(self):

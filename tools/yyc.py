@@ -18,7 +18,7 @@ render_yyc = web.template.render('templates/')
 
 class reyyc:
     def GET(self, path):
-        return 'Welcome to here, URI is /blog{0}, path is {0}'.format(path)
+        return 'Welcome to here, URI is /yyc{0}'.format(path)
 
 class encrypt:
     def POST(self):
