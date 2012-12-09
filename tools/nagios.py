@@ -22,12 +22,6 @@ nagiosList = []
 class UnNagios:
     def GET(self, path):
         return 'Welcome to here, URI is /nagios{0}'.format(path)
-
-class Tool:
-    def getRandomStr(self, l=5):
-        randomList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
-        return string.join(random.sample(randomList, l)).replace(' ', '')
-
 class UrlModel:
     nid = ''
     name = ''
@@ -43,12 +37,38 @@ class UrlModel:
         self.contact = contact
         self.cmd = cmd
         self.category = category
+
+class Service:
+    def getRandomStr(self, l=5):
+        randomList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+        return string.join(random.sample(randomList, l)).replace(' ', '')
+    
+    def getNagiosList(self, operate=''):
+        pass
+    
+    def getNagiosByNid(self, nid):
+        pass
+    
+    def addUrl(self, nagios):
+        pass
         
+    def modUrl(self, nagios):
+        pass
+    
+    def delUrl(self, nagios):
+        pass
+    
+    def pauseUrl(self, nagios):
+        pass
+    
+    def startUrl(self, nagios):
+        pass
+    
 class UrlIndex:
     def GET(self):
         operate = 'add'
-        tool = Tool()
-        nagios = UrlModel(nid=tool.getRandomStr(5))
+        service = Service()
+        nagios = UrlModel(nid=service.getRandomStr(5))
         return render_nagios.nagios(operate, nagios, nagiosList)
 
 class Operate:
@@ -56,9 +76,9 @@ class Operate:
         i = web.input()
         operate = i.operate
         nid = i.nid
+        service = Service()
         if operate == 'add':
-            tool = Tool()
-            nid=tool.getRandomStr(5)
+            nid = service.getRandomStr(5)
         elif operate == 'mod':
             pass
         elif operate == 'pause':
