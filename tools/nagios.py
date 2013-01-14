@@ -12,16 +12,15 @@ urls = (
     '/url/pause', 'UrlPause',
     '/url/start', 'UrlStart',
     '/url/del', 'UrlDel',
-    '(.*)', 'UnNagios'
+    '.*', 'UnNagios'
 )
 
 app_nagios = web.application(urls, globals())
 render_nagios = web.template.render('templates/')
 nagiosList = []
+    
+#Model
 
-class UnNagios:
-    def GET(self, path):
-        return 'Welcome to here, URI is /nagios{0}'.format(path)
 class UrlModel:
     nid = ''
     name = ''
@@ -37,6 +36,8 @@ class UrlModel:
         self.contact = contact
         self.cmd = cmd
         self.category = category
+
+#Controller
 
 class Service:
     def getRandomStr(self, l=5):
@@ -63,6 +64,10 @@ class Service:
     
     def startUrl(self, nagios):
         pass
+
+class UnNagios:
+    def GET(self):
+        return 'Please leave immediately! ~\nplease get out here!~'
     
 class UrlIndex:
     def GET(self):
