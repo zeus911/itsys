@@ -1,8 +1,8 @@
-$def with (operate, nagios, nagiosList)
+$def with (operate, urlModel, urlModelList)
 
 <html>
 <head>
-  <title> Nagios状态监控信息 </title>
+  <title> Nagios-URL状态监控信息 </title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="Generator" content="EditPlus">
   <meta name="Author" content="">
@@ -13,20 +13,22 @@ $def with (operate, nagios, nagiosList)
 <body>
 <div align="center">
 <form action="/nagios/url/$operate" method="post">
+<input type="hidden" name="operate" size="60" value="$operate"/>
 	<table border="0" cellpadding="1">
-		<caption>监控信息处理&nbsp;&nbsp;<a href="/nagios/url/operate?operate=add">新增</a></caption>
-		<tr><th>编号</th><td><input type="text" name="nid" size="60" value="$nagios.nid" disabled="disabled"/></td></tr>
-		<tr><th>名称</th><td><input type="text" name="name" size="60" value="$nagios.name"/></td></tr>
-		<tr><th>地址</th><td><input type="text" name="url" size="60" value="$nagios.url"/></td></tr>
-		<tr><th>报警联系人</th><td><input type="text" name="contact" size="60" value="$nagios.contact"/></td></tr>
-		<tr><th>监控命令</th><td><input type="text" name="cmd" size="60" value="$nagios.cmd"/></td></tr>
-		<tr><th>类别</th><td><input type="text" name="category" size="60" value="$nagios.category"/></td></tr>
+		<caption>URL监控信息处理&nbsp;&nbsp;<a href="/nagios/url/operate?operate=add">新增</a></caption>
+		<tr><th>编号</th><td><input type="text" name="nid" size="60" value="$urlModel.nid" disabled="disabled"/></td></tr>
+		<tr><th>名称</th><td><input type="text" name="name" size="60" value="$urlModel.name"/></td></tr>
+		<tr><th>地址</th><td><input type="text" name="url" size="60" value="$urlModel.url"/></td></tr>
+		<tr><th>报警联系人</th><td><input type="text" name="contact" size="60" value="$urlModel.contact"/></td></tr>
+		<tr><th>监控命令</th><td><input type="text" name="cmd" size="60" value="$urlModel.cmd"/></td></tr>
+		<tr><th>类别</th><td><input type="text" name="category" size="60" value="$urlModel.category"/></td></tr>
+		<tr><th>状态</th><td><input type="text" name="status" size="60" value="$urlModel.status"/></td></tr>
 		<tr><th></th><td align="center"><input type="submit" value="$operate"/>&nbsp;<input type="reset" value="reset"/></td></tr>
 	</table>
 </form>
 <br/>
 <table border="0" cellpadding="3">
-<caption>Nagios状态监控信息</caption>
+<caption>URl状态监控信息</caption>
 	<tr>
 		<th>编号</th>
 		<th>名称</th>
@@ -36,7 +38,7 @@ $def with (operate, nagios, nagiosList)
 		<th>类别</th>
 		<th>操作</th>
 	</tr>
-$for model in nagiosList: 
+$for model in urlModelList: 
 	<tr>
 		<td>$model.nid</td>
 		<td>$model.name</td>
@@ -45,9 +47,9 @@ $for model in nagiosList:
 		<td>$model.cmd</td>
 		<td>$model.category</td>
 		<td>
-			<a href="/nagios/url/operate?operate=mod&nid=$nagios.nid">修改</a>
-			<a href="/nagios/url/operate?operate=pause&nid=$nagios.nid">暂停</a>
-			<a href="/nagios/url/operate?operate=del&nid=$nagios.nid">删除</a>
+			<a href="/nagios/url/operate?operate=mod&nid=$model.nid">修改</a>
+			<a href="/nagios/url/operate?operate=pause&nid=$model.nid">暂停</a>
+			<a href="/nagios/url/operate?operate=del&nid=$model.nid">删除</a>
 		</td>
 	</tr>
 </table>
